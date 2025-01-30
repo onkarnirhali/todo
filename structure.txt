@@ -1,0 +1,60 @@
+/src/app/
+├── components/
+│   ├── kanban-board/             # Main Kanban Board Component
+│   │   ├── kanban-board.component.ts
+│   │   ├── kanban-board.component.html
+│   │   ├── kanban-board.component.scss
+│   ├── kanban-column/            # Single Column (To-Do, In-Progress, Done)
+│   │   ├── kanban-column.component.ts
+│   │   ├── kanban-column.component.html
+│   │   ├── kanban-column.component.scss
+│   ├── kanban-task/              # Single Task Component
+│   │   ├── kanban-task.component.ts
+│   │   ├── kanban-task.component.html
+│   │   ├── kanban-task.component.scss
+│   ├── add-task-dialog/          # Dialog for Adding/Editing a Task
+│   │   ├── add-task-dialog.component.ts
+│   │   ├── add-task-dialog.component.html
+│   │   ├── add-task-dialog.component.scss
+│   ├── priority-badge/           # Small component for displaying priority
+│   │   ├── priority-badge.component.ts
+│   │   ├── priority-badge.component.html
+│   │   ├── priority-badge.component.scss
+│   ├── date-time-picker/         # Custom Date & Time Pickers
+│   │   ├── date-time-picker.component.ts
+│   │   ├── date-time-picker.component.html
+│   │   ├── date-time-picker.component.scss
+│   ├── auth/                     # Authentication Components (Login, Signup)
+│   │   ├── login.component.ts
+│   │   ├── login.component.html
+│   │   ├── login.component.scss
+│   │   ├── signup.component.ts
+│   │   ├── signup.component.html
+│   │   ├── signup.component.scss
+│   ├── subscription/             # Subscription and Payment Handling
+│   │   ├── subscription.component.ts
+│   │   ├── subscription.component.html
+│   │   ├── subscription.component.scss
+│   ├── navbar/                   # Navigation Bar
+│   │   ├── navbar.component.ts
+│   │   ├── navbar.component.html
+│   │   ├── navbar.component.scss
+│   ├── sidebar/                  # Sidebar Menu
+│   │   ├── sidebar.component.ts
+│   │   ├── sidebar.component.html
+│   │   ├── sidebar.component.scss
+│   ├── settings/                 # User Settings
+│   │   ├── settings.component.ts
+│   │   ├── settings.component.html
+│   │   ├── settings.component.scss
+│   ├── chrome-extension-view/     # Chrome Extension View (One Column)
+│   │   ├── chrome-extension-view.component.ts
+│   │   ├── chrome-extension-view.component.html
+│   │   ├── chrome-extension-view.component.scss
+├── services/
+│   ├── task.service.ts            # Handles CRUD for tasks
+│   ├── auth.service.ts            # Handles authentication
+│   ├── subscription.service.ts    # Handles payments
+│   ├── sync.service.ts            # Handles sync logic
+├── app.module.ts
+└── app.component.ts

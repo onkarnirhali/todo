@@ -1,0 +1,16 @@
+<div class="kanban-board">
+    <!-- Kanban Columns -->
+    <div class="column" *ngFor="let column of columns">
+      <h3>{{ column.title }}</h3>
+      
+      <!-- Task List -->
+      <div class="task" *ngFor="let task of column.tasks">
+        <span class="priority" [ngClass]="task.priority">{{ task.priority }}</span>
+        {{ task.title }}
+      </div>
+  
+      <!-- Add Task Form -->
+      <button (click)="addTask('New Task', 'Medium', column.title)">+ Add Task</button>
+    </div>
+  </div>
+  
