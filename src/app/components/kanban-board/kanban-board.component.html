@@ -1,16 +1,17 @@
-<div class="kanban-board">
-    <!-- Kanban Columns -->
-    <div class="column" *ngFor="let column of columns">
+<div class="kanban-board" cdkDropListGroup>
+    <div class="column" *ngFor="let column of columns; let i = index">
       <h3>{{ column.title }}</h3>
-      
-      <!-- Task List -->
-      <div class="task" *ngFor="let task of column.tasks">
-        <span class="priority" [ngClass]="task.priority">{{ task.priority }}</span>
-        {{ task.title }}
-      </div>
   
-      <!-- Add Task Form -->
-      <button (click)="addTask('New Task', 'Medium', column.title)">+ Add Task</button>
+      <!-- Drag & Drop List with ID -->
+      <div cdkDropList [cdkDropListData]="column.tasks" [id]="'column-' + i" (cdkDropListDropped)="drop($event)">
+        
+        <!-- Draggable Tasks -->
+        <div class="task" *ngFor="let task of column.tasks" cdkDrag>
+          <span class="priority" [ngClass]="task.priority">{{ task.priority }}</span>
+          {{ task.title }}
+        </div>
+        
+      </div>
     </div>
   </div>
   
