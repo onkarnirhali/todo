@@ -1,17 +1,27 @@
+<!-- Single "Add Task" Button -->
+<button class="add-task-button" (click)="openModal()">+ Add Task</button>
+
+<!-- Kanban Board -->
 <div class="kanban-board" cdkDropListGroup>
-    <div class="column" *ngFor="let column of columns; let i = index">
-      <h3>{{ column.title }}</h3>
-  
-      <!-- Drag & Drop List with ID -->
-      <div cdkDropList [cdkDropListData]="column.tasks" [id]="'column-' + i" (cdkDropListDropped)="drop($event)">
-        
-        <!-- Draggable Tasks -->
-        <div class="task" *ngFor="let task of column.tasks" cdkDrag>
-          <span class="priority" [ngClass]="task.priority">{{ task.priority }}</span>
-          {{ task.title }}
-        </div>
-        
+  <div class="column" *ngFor="let column of columns; let i = index">
+    <h3>{{ column.title }}</h3>
+
+    <!-- Drag & Drop List -->
+    <div cdkDropList [cdkDropListData]="column.tasks" [id]="'column-' + i" (cdkDropListDropped)="drop($event)">
+      
+      <!-- Draggable Tasks -->
+      <div class="task" *ngFor="let task of column.tasks" cdkDrag>
+        <span class="priority" [ngClass]="task.priority">{{ task.priority }}</span>
+        {{ task.title }} (Due: {{ task.dueDate }})
       </div>
+      
     </div>
   </div>
-  
+</div>
+
+<!-- Task Modal -->
+<app-task-modal 
+  *ngIf="modalOpen"
+  (close)="modalOpen = false"
+  (taskAdded)="addTask($event)">
+</app-task-modal>

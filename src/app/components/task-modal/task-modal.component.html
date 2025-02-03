@@ -1,0 +1,29 @@
+<!-- Modal Background (Frosted Glass Effect) -->
+<div class="modal-overlay" (click)="closeModal()">
+    <!-- Modal Content (Prevents Click from Closing) -->
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h2>Add Task</h2>
+      
+      <form (submit)="addTask()">
+        <label for="taskTitle">Task Title</label>
+        <input id="taskTitle" type="text" [(ngModel)]="taskTitle" name="taskTitle" required />
+      
+        <label for="taskPriority">Priority</label>
+        <select id="taskPriority" [(ngModel)]="taskPriority" name="taskPriority" required>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      
+        <label for="taskDueDate">Due Date</label>
+        <input id="taskDueDate" type="date" [(ngModel)]="taskDueDate" name="taskDueDate" required />
+      
+        <div class="buttons">
+          <button type="submit">Add Task</button>
+          <button type="button" (click)="closeModal()">Cancel</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+  
